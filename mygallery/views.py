@@ -45,7 +45,7 @@ def convert_dates(dates):
 def gallery(request):
     return render(request, 'templates/gallery.html')
 
-def viewphoto(request):
+def viewphoto(request, pk):
     return render(request, 'templates/photo.html')
 
 def addphoto(request):
