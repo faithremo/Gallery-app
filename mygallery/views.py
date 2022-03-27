@@ -1,3 +1,4 @@
+from re import template
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse, Http404
 import datetime as dt
@@ -29,19 +30,6 @@ def past_days_mygallery(request,past_date):
 def welcome(request):
     return render(request, 'welcome.html')
 
-    
-    
-    # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
-    day = convert_dates(date)
-    html = f'''
-        <html>
-            <body>
-                <h1>Photos for {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
-
 
 def convert_dates(dates):
     
@@ -53,6 +41,9 @@ def convert_dates(dates):
     # Returning the actual day of the week
     day = days[day_number]
     return day
+
+def gallery(request):
+    return render(request, 'templates/gallery.html')
 
 
 
