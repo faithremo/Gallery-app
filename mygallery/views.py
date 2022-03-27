@@ -43,13 +43,13 @@ def convert_dates(dates):
     return day
 
 def gallery(request):
-    return render(request, 'templates/gallery.html')
+    return render(request, 'gallery.html')
 
 def viewphoto(request, pk):
-    return render(request, 'templates/photo.html')
+    return render(request, 'photo.html')
 
 def addphoto(request):
-    return render(request, 'templates/add.html')
+    return render(request, 'add.html')
 
 
 
