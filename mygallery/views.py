@@ -2,6 +2,7 @@ from re import template
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse, Http404
 import datetime as dt
+from .models import Category, Photo
 
 # Create your views here.
 def welcome(request):
@@ -43,10 +44,15 @@ def convert_dates(dates):
     return day
 
 def gallery(request):
-    return render(request, 'gallery.html')
+    categories = Category.objects.all()
+    photos = Photo.objects.all()
+    
+    context = {'categories': categories, 'photos': photos}
+    return render(request, 'gallery.html', context)
 
 def viewphoto(request, pk):
-    return render(request, 'photo.html')
+    photo = Photo.objects.get(id=pk)
+    return render(request, 'photo.html', {'photo': photo})
 
 def addphoto(request):
     return render(request, 'add.html')
