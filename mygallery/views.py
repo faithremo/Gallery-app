@@ -45,6 +45,14 @@ def convert_dates(dates):
 def gallery(request):
     return render(request, 'templates/gallery.html')
 
+def viewphoto(request):
+    return render(request, 'templates/photo.html')
+
+def addphoto(request):
+    return render(request, 'templates/add.html')
+
+
+
 
 
 
