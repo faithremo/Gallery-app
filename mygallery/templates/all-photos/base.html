@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}<title>My Gallery- {{title}}</title>
+  {% else %}
+    <title> My Gallery</title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %} <h1>Photos for {{date|date:"l d-F Y"}}</h1> {%endblock%}
+</body>
