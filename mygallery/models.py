@@ -11,14 +11,15 @@ class Category(models.Model):
 
 class Photo(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
-    image = models.ImageField(null=False, blank=False)
+    #image = models.ImageField(null=False, blank=False)
     description = models.TextField()
+    image = CloudinaryField('image')
     
     def __str__(self):
         return self.description
 
-class mygallery(models.Model):
+#class mygallery(models.Model):
     #title field
-    title = models.CharField(max_length=100)
+    #title = models.CharField(max_length=100)
     #image field
-    image = CloudinaryField('image')
+    #image = CloudinaryField('image')
