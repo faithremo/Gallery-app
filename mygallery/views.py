@@ -57,7 +57,16 @@ def viewphoto(request, pk):
 def addphoto(request):
     categories = Category.objects.all()
     
-    
+    if request.method == 'POST':
+        data = request.POST
+        image = request.FILES.get('image')
+        
+        if data['category'] != 'none':
+            category = Category.objects.get(id=data['category'])
+        elif data['category_new'] != '':
+            category, created = Category.objects.get_or_create(name=data['category_new'])
+        else:
+            category = None
     
     context = {'categories': categories}
     return render(request, 'add.html', context)
