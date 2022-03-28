@@ -16,12 +16,13 @@ django
 pip Visual Studio
 
 ## Repository
-https://github.com/faithremo/Pitch.git
+https://github.com/faithremo/Gallery-app.git
 
 ## Technologies used
-python-flask
+django
 html
 bootstrap
+css
 SQLAlchemy
 
 
