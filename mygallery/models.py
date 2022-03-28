@@ -19,6 +19,6 @@ class Photo(models.Model):
 
 class mygallery(models.Model):
     #title field
-    title = models.Charfield(max_length=100)
+    title = models.CharField(max_length=100)
     #image field
     image = CloudinaryField('image')
