@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mygallery.apps.MygalleryConfig',
     'bootstrap4',
-
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +55,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+#adding config
+cloudinary.config(
+    cloud_name = "faithremo",
+    api_key = "136111586444998",
+    api_secret = "gvFxcYS_YajDqoCbNX8p9w8NyYQ"
+)
 
 ROOT_URLCONF = 'gallery.urls'
 

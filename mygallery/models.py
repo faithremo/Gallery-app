@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -15,3 +16,9 @@ class Photo(models.Model):
     
     def __str__(self):
         return self.description
+
+class mygallery(models.Model):
+    #title field
+    title = models.Charfield(max_length=100)
+    #image field
+    image = CloudinaryField('image')
