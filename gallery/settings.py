@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from email.policy import default
 import os
-import django_heroku
+import django_on_heroku
 import dj_database_url
 import cloudinary
 import cloudinary.uploader
@@ -194,4 +194,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
